@@ -1,0 +1,8 @@
+opencv-python
+numpy
+pdf2image
+google-genai
+pandas
+Pillow
+ultralytics
+python-dotenv

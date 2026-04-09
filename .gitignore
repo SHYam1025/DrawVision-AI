@@ -1,0 +1,26 @@
+# Environments
+OCR_venv/
+venv/
+env/
+.env
+
+# Model Weights
+*.pt
+*.onnx
+
+# Python Caches
+__pycache__/
+*.pyc
+
+# Mac OS junk files
+.DS_Store
+
+# Datasets and Outputs
+split_data/
+anchors_text*.csv
+*.xlsx
+*.pdf
+annotated_images/
+uploads/
+results_*.csv
+results_*.xlsx

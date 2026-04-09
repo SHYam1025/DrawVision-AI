@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawVision AI — Intelligent Engineering Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i data-lucide="scan-eye" class="logo-icon"></i>
+                <span class="logo-text">DrawVision <span class="accent">AI</span></span>
+            </div>
+            <div class="header-actions">
+                <div id="connection-status" class="status-badge disconnected">
+                    <span class="dot"></span> Offline
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="upload-section" class="card fade-in">
+                <div class="upload-area" id="drop-zone">
+                    <i data-lucide="upload-cloud" class="upload-icon"></i>
+                    <h2>Upload Engineering Drawings</h2>
+                    <p>Drag and drop your PDF blueprints or click to browse</p>
+                    <input type="file" id="file-input" accept=".pdf" hidden>
+                    <button class="btn-primary" onclick="document.getElementById('file-input').click()">Select PDF</button>
+                    <div id="file-info" class="file-info hidden">
+                        <i data-lucide="file-text"></i>
+                        <span id="selected-filename"></span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="process-btn" class="btn-action hidden" disabled>
+                        <i data-lucide="play"></i> Start Analysis
+                    </button>
+                </div>
+            </section>
+
+            <section id="processing-view" class="grid-layout hidden">
+                <div class="left-panel">
+                    <div class="card live-stream-card">
+                        <div class="card-header">
+                            <h3><i data-lucide="activity" class="text-blue"></i> Live Detection Stream</h3>
+                            <div id="progress-indicator" class="progress-bar-container">
+                                <div id="progress-fill" class="progress-fill"></div>
+                                <span id="progress-text">0%</span>
+                            </div>
+                        </div>
+                        <div id="live-image-container" class="live-image-container">
+                            <div class="placeholder">
+                                <i data-lucide="image" class="placeholder-icon"></i>
+                                <p>Annotated pages will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-panel">
+                    <div class="card console-card">
+                        <div class="card-header">
+                            <h3><i data-lucide="terminal" class="text-green"></i> Analysis Logs</h3>
+                        </div>
+                        <div id="log-feed" class="log-feed"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results-section" class="card results-card fade-in hidden">
+                <div class="results-header">
+                    <div class="title-group">
+                        <h2><i data-lucide="table" class="text-purple"></i> Extracted Spec Data</h2>
+                        <p id="total-results-count">No items extracted</p>
+                    </div>
+                    <div class="export-group">
+                        <button id="download-csv" class="btn-secondary">
+                            <i data-lucide="download"></i> CSV
+                        </button>
+                        <button id="download-excel" class="btn-secondary">
+                            <i data-lucide="file-spreadsheet"></i> Excel
+                        </button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="results-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Project</th>
+                                <th>Line #</th>
+                                <th>Diameter</th>
+                                <th>Service</th>
+                                <th>Class</th>
+                                <th>BOP Elev</th>
+                                <th>Confidence</th>
+                                <th>Raw Text</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-body">
+                            <!-- Rows injected here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="/static/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
