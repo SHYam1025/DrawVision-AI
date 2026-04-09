@@ -9,6 +9,9 @@ DrawVision AI is a powerful tool designed to automate the extraction of piping s
 - **Intelligent Extraction**: Uses Gemini AI to parse complex piping codes (Diameter, Service Code, Line Number, Piping Class, etc.) directly from drawing crops.
 - **Visual Feedback**: View annotated images with YOLO-detected bounding boxes as they are processed.
 - **Exportable Results**: Download the final extraction in perfectly structured **CSV** or **Excel** formats.
+[Deteted Pipes Specifications]<img width="900" height="883" alt="Screenshot 2026-04-09 at 3 13 28 PM" src="https://github.com/user-attachments/assets/2cd2bf34-53c3-4463-a2cc-ecd92f922f6d" />
+
+[Annotaed Pipe Anchors]<img width="1673" height="923" alt="Screenshot 2026-04-09 at 3 18 33 PM" src="https://github.com/user-attachments/assets/f3f2b82a-9420-4f1a-97a0-a23a9e88c730" />
 
 ## 🛠️ Tech Stack
 - **Backend**: FastAPI (Python)
